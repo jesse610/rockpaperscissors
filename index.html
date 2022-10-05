@@ -31,12 +31,16 @@
 
         function playRound(computerSelection, playerSelection) {
             computerSelection = getComputerChoice()
-            playerSelection = 'paper' 
+            playerSelection = 'rock' 
             
-            if (computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper') {
+            if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'rock')) {
                 return `You win! ${playerSelection} beats ${computerSelection}!`
-            }
-        }
+            } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'paper')) {
+                return `You lose! ${playerSelection} loses to ${computerSelection}!`
+            } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'scissors')) {
+                return `Draw! ${playerSelection} draws to ${computerSelection}`
+            } 
+        } 
         
         console.log(playRound())
     </script>
