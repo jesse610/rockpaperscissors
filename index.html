@@ -8,27 +8,36 @@
 </head>
 <body>
     <script>
-        let rock
-        let paper
-        let scissors
 
-        function getComputerChoice(options) {
-            let rock = 'Rock'
-            let paper = 'Paper'
-            let scissors = 'Scissors'
-            choice = Math.floor(Math.random() * 3)
-            console.log(choice)
+        function getComputerChoice() {
+            computerChoice = Math.floor(Math.random() * 3)
+            console.log(computerChoice)
             
-            if (choice === 0) {
-                return rock
-            } else if (choice === 1) {
-                return paper
-            } else if (choice === 2) {
-                return scissors
+            if (computerChoice === 0) {
+                return 'Rock'
+            } else if (computerChoice === 1) {
+                return 'Paper'
+            } else if (computerChoice === 2) {
+                return 'Scissors'
             }
             
-            return choice 
+            return computerChoice 
         }
+
+        //function getPlayerChoice() {
+        //    playerChoice = prompt('Please choose Rock, Paper, or Scissors: ')
+        //    return playerChoice
+        //}
+
+        function playRound(computerSelection, playerSelection) {
+            computerSelection = getComputerChoice()
+            playerSelection = 'Paper'
+            
+            if (computerSelection === 'Rock' && playerSelection === 'Paper') {
+                return `You win! ${playerSelection} beats ${computerSelection}!`
+            } 
+        }
+        console.log(playRound())
     </script>
 </body>
 </html>
