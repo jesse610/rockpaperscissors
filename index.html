@@ -8,20 +8,20 @@
 </head>
 <body>
     <script>
-
+    
         function getComputerChoice() {
             computerChoice = Math.floor(Math.random() * 3)
             console.log(computerChoice)
             
             if (computerChoice === 0) {
-                return 'Rock'
+                return 'rock'
             } else if (computerChoice === 1) {
-                return 'Paper'
+                return 'paper'
             } else if (computerChoice === 2) {
-                return 'Scissors'
+                return 'scissors'
             }
             
-            return computerChoice 
+            return computerChoice.toLowerCase()
         }
 
         //function getPlayerChoice() {
@@ -31,12 +31,13 @@
 
         function playRound(computerSelection, playerSelection) {
             computerSelection = getComputerChoice()
-            playerSelection = 'Paper'
+            playerSelection = 'paper' 
             
-            if (computerSelection === 'Rock' && playerSelection === 'Paper') {
+            if (computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper') {
                 return `You win! ${playerSelection} beats ${computerSelection}!`
-            } 
+            }
         }
+        
         console.log(playRound())
     </script>
 </body>
