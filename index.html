@@ -11,7 +11,6 @@
     
         function getComputerChoice() {
             computerChoice = Math.floor(Math.random() * 3)
-            console.log(computerChoice)
             
             if (computerChoice === 0) {
                 return 'rock'
@@ -28,21 +27,22 @@
         //    playerChoice = prompt('Please choose Rock, Paper, or Scissors: ')
         //    return playerChoice
         //}
+        let playerScore = 0;
+        let computerScore = 0;
 
         function playRound(computerSelection, playerSelection) {
-            computerSelection = getComputerChoice()
-            playerSelection = 'rock' 
-            
+            computerSelection = getComputerChoice();
+            playerSelection = prompt('Please choose Rock Paper or Scissors: ');
+
             if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'rock')) {
-                return `You win! ${playerSelection} beats ${computerSelection}!`
+                return `You win! ${playerSelection} beats ${computerSelection}!` + '' + ` Your score is: ${playerScore += 1}. Computer score is: ${computerScore}.`
             } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'paper')) {
-                return `You lose! ${playerSelection} loses to ${computerSelection}!`
+                return `You lose! ${playerSelection} loses to ${computerSelection}!` + '' + ` Your score is: ${playerScore}. Computer score is: ${computerScore += 1}.`
             } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'scissors')) {
-                return `Draw! ${playerSelection} draws to ${computerSelection}`
+                return `Draw! ${playerSelection} draws to ${computerSelection}` + '' + ` Your score is: ${playerScore}. Computer score is: ${computerScore}.`
             } 
         } 
-        
-        console.log(playRound())
+
     </script>
 </body>
 </html>
