@@ -43,6 +43,21 @@
             } 
         } 
 
+        function game() {
+         for (let i = 0; i < 5; i++) {
+            console.log(playRound())
+        }
+        if (playerScore > computerScore) {
+            return 'You are the winner!'
+        } else if (computerScore > playerScore) {
+            return 'The computer is the winner!'
+        } else {
+            return 'No winner!'
+        }
+    }
+
+       console.log(game())
+
     </script>
 </body>
 </html>
