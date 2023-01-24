@@ -1,5 +1,9 @@
 let btns = document.querySelectorAll('button')
-let resultArea = document.querySelector('p')
+let pScore = document.querySelector('#user_score')
+let bScore = document.querySelector('#bot_score')
+let resultArea = document.querySelector('#result')
+let playerImg = document.querySelector('#player_img')
+let botImg = document.querySelector('#bot_img')
 
 let playerSelection;
 
@@ -32,11 +36,23 @@ function playRound(computerSelection, x) {
     x = playerSelection
 
     if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'rock')) {
-        resultArea.textContent = `You win! ${playerSelection} beats ${computerSelection}!` + '' + ` Your score is: ${playerScore += 1}. Computer score is: ${computerScore}.`
+        playerImg.src = `./images/${playerSelection}.png`
+        botImg.src = `./images/${computerSelection}.png`
+        pScore.textContent = `${playerScore += 1}`
+        bScore.textContent = `${computerScore}`
+        resultArea.textContent = 'You win!'
     } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'scissors') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'paper')) {
-        resultArea.textContent = `You lose! Your selection: ${playerSelection} loses to ${computerSelection}` + '' + ` Your score is: ${playerScore}. Computer score is: ${computerScore += 1}.`
+        playerImg.src = `./images/${playerSelection}.png`
+        botImg.src = `./images/${computerSelection}.png`
+        pScore.textContent = `${playerScore}`
+        bScore.textContent = `${computerScore += 1}`
+        resultArea.textContent = 'Computer wins!'
     } else if ((computerSelection === 'rock' && playerSelection.toLowerCase() === 'rock') || (computerSelection === 'paper' && playerSelection.toLowerCase() === 'paper') || (computerSelection === 'scissors' && playerSelection.toLowerCase() === 'scissors')) {
-        resultArea.textContent = `Draw! ${playerSelection} draws to ${computerSelection}` + '' + ` Your score is: ${playerScore}. Computer score is: ${computerScore}.`
+        playerImg.src = `./images/${playerSelection}.png`
+        botImg.src = `./images/${computerSelection}.png`
+        pScore.textContent = `${playerScore}`
+        bScore.textContent = `${computerScore}`
+        resultArea.textContent = 'Draw!'
     } 
 } 
 
