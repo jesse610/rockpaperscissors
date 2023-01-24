@@ -1,0 +1,21 @@
+html {
+    box-sizing: border-box;
+}
+
+.score {
+    text-align: center;
+    display: block;
+    height: 100px;
+}
+
+.img-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.btn-container {
+    width: 100%;
+    text-align: center;
+}
+
