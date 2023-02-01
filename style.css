@@ -2,6 +2,14 @@ html {
     box-sizing: border-box;
 }
 
+body {
+    margin: 0;
+    background-image: url('/images/arena.png');
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    background-attachment: fixed;
+    width:100%;
+}
 .score {
     text-align: center;
     display: block;
