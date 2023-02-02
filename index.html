@@ -8,28 +8,41 @@
     <title>Document</title>
 </head>
 <body>
-    <main>
-        <div class="score">
-            <h1>SCORE</h1>
-            <p id="result"></p>
-            <span id="user_score">0</span>
-            <span id="bot_score">0</span>
+    <header>
+        <div>
+            <h1 id="rumble">LETS GET READY TO RUMBLE ! ! !</h1>
         </div>
+    </header>
+
+    <section class="score">
+        <h2 id="round">ROUND 1</h2>
+        <p id="result"></p>
+        <span id="user_score">0</span>
+        <span id="bot_score">0</span>
+    </section>
+
+    <section>
         <div class="img-container">
             <div class="img-left">
-                <img id="player_img" src="https://via.placeholder.com/200" alt="">
-                    <div class="btn-container">
-                        <button value="rock">Rock</button>
-                        <button value="paper">Paper</button>
-                        <button value="scissors">Scissors</button>
-                    </div>
+                <img id="player_img" src="" alt="">
             </div>
             <div class="img-right">
-                <img id="bot_img" src="https://via.placeholder.com/200" alt="">
+                <img id="bot_img" src="" alt="">
             </div>
         </div>
+    </section>
 
-    </main>
+    <section>
+        <div class="btn-container">
+            <button value="rock">Rock</button>
+            <button value="paper">Paper</button>
+            <button value="scissors">Scissors</button>
+        </div>
+    </section>
+    <section>
+        <div>
+        </div>
+    </section>
     <script src="main.js"></script>
 </body>
 </html>
