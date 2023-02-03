@@ -99,7 +99,7 @@ img {
 
 @media screen and (max-width: 700px) {
     #rumble {
-        font-size: 1.6em;
+        font-size: 1.5em;
     }
     #round {
         font-size: 2em;
@@ -109,6 +109,7 @@ img {
     }
     button {
         font-size: 1.5em;
+        margin-bottom: 2vh;
     }
     .img-left,
     .img-right {
