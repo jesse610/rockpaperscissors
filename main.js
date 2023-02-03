@@ -1,4 +1,4 @@
-let btns = document.querySelectorAll('button')
+let btns = document.querySelectorAll('.btn')
 let pScore = document.querySelector('#user_score')
 let bScore = document.querySelector('#bot_score')
 let resultArea = document.querySelector('#result')
@@ -6,6 +6,8 @@ let playerImg = document.querySelector('#player_img')
 let botImg = document.querySelector('#bot_img')
 let roundNum = document.querySelector('#round')
 let count = 0
+
+let playAgainBtn = document.querySelector('.play_again')
 
 let playerSelection;
 
@@ -67,7 +69,6 @@ function playRound(computerSelection, x) {
         resultArea.textContent = 'Last Round!'
     } else if (count === 12) {
         endGame()
-        restart()
     }
 
 } 
@@ -87,8 +88,21 @@ function endGame() {
     btns.forEach(btn => {
         btn.classList.add('remove')
     })
+    playAgainBtn.classList.remove('remove')
+    playAgainBtn.classList.add('btn-container')
+    playAgainBtn.classList.add('play')
+
+    if (playerScore > computerScore) {
+        resultArea.textContent = 'You are the winner!'
+    } else if (computerScore > playerScore) {
+        resultArea.textContent = 'The computer is the winner!'
+    } else {
+        resultArea.textContent = 'No winner!'
+    }
+
+    playAgainBtn.addEventListener('click', restart)
 }
 
 function restart() {
-
+    window.location.reload()
 }
