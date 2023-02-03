@@ -69,6 +69,7 @@ header {
 }
 
 button {
+    color: black;
     font-family: "From Cartoon Blocks";
     font-size: 55px;
     border-radius: 5px;
@@ -123,6 +124,7 @@ img {
     }
     .score {
         font-size: 3.2vh;
+        margin-bottom: 10vh;
     }
 
     #result {
